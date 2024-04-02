@@ -7,9 +7,13 @@ import CatIndex from "./pages/CatIndex"
 import CatNew from "./pages/CatNew"
 import CatShow from "./pages/CatShow"
 import NotFound from "./pages/NotFound"
+import mockCats from "./mockCats"
 import { Routes, Route } from "react-router-dom"
+import { React, useState } from "react"
 
 const App = () => {
+  const [cats, setCats] = useState(mockCats)
+  console.log(mockCats)
   return (
     <>
       <Header />
