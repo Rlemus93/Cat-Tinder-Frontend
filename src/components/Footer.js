@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <p className="footer-text"><span>&copy; Ryan Lemus | Amir Jackson | Morgan Smith</span></p>
   )
 }
 

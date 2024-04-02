@@ -1,7 +1,11 @@
 :root {
   --clr-bckgrnd-grey: #1C1E1F;
+  --clr-lighter-grey: #2D3032;
+  --clr-footer-grey: #9999;
   --clr-yellow: #ECD82F;
 }
+
+/* nav */
 
 .nav-cont {
   background-color: var(--clr-bckgrnd-grey);
@@ -21,4 +25,15 @@
 .cat-tinder-logo {
   width: 5rem;
   margin-left: 1.25rem;
+}
+
+/* footer */
+
+.footer-text {
+  color: var(--clr-footer-grey);
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
 }
