@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
 const CatIndex = () => {
   return (
-    <div>CatIndex</div>
+    <h3>CatIndex</h3>
   )
 }
 

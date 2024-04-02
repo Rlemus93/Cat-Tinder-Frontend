@@ -5,6 +5,10 @@
   --clr-yellow: #ECD82F;
 }
 
+* {
+  font-family: "Raleway", sans-serif;
+}
+
 /* nav */
 
 .nav-cont {
@@ -36,4 +40,12 @@
   position: absolute;
   bottom: 0;
   right: 1rem;
+}
+
+/* 404 */
+.houston-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }

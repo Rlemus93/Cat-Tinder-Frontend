@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react"
 
 const CatEdit = () => {
   return (
-    <div>CatEdit</div>
+    <h3>CatEdit</h3>
   )
 }
 
