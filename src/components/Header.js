@@ -6,7 +6,8 @@ import catTinderLogo from "../assets/cat-tinder-logo.png"
 const Header = () => {
   return (
     <Nav className="nav-cont" navbar>
-      <div>
+      <div className="hider"></div>
+      <div className="logo-cont">
         <NavLink className="nav-link" to="/">
           <img
               src={catTinderLogo}

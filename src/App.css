@@ -18,8 +18,9 @@
   color: white;
   flex-direction: row !important;
   justify-content: space-between;
-  padding: 1.25rem;
+  padding: 3%;
   height: 20vh;
+  position: relative;
 }
 
 .navigation-links {
@@ -29,9 +30,26 @@
   gap: 1.5rem;
 }
 
+.nav-link {
+  font-size: 2.5vh !important;
+}
+
+.logo-cont {
+  display: flex;
+  align-items: center;
+}
+
 .cat-tinder-logo {
-  width: 5rem;
-  margin-left: 1.25rem;
+  width: 8vw;
+  margin-left: 25%;
+}
+
+.hider {
+  position: absolute;
+  bottom: -3vh;
+  background-color: var(--clr-bckgrnd-grey);
+  height: 5vh;
+  width: 100%;
 }
 
 /* footer */
@@ -41,11 +59,10 @@
   display: flex;
   justify-content: end;
   position: absolute;
-  bottom: 0;
-  right: 1rem;
+  bottom: 1vh;
+  right: 2vw;
+  font-size: 2.5vh;
 }
-
-
 
 /* pages */
 
@@ -70,7 +87,7 @@
   position: absolute;
   top: 8vh;
   left: 28vw;
-  font-size: 8rem;
+  font-size: 14vh;
   font-weight:800;
   letter-spacing: 10px;
   z-index: 1;
@@ -80,15 +97,15 @@
 .home-sub-title {
   color: var(--clr-home-grey);
   position: absolute;
-  top: 52vh;
+  top: 45vh;
   left: 28vw;
-  font-size: 1.5rem;
+  font-size: 3.5vh;
 }
 
 .home-hero-image {
   position: absolute;
-  top: -10vh;
-  right: 19vw;
+  top: -4vh;
+  right: 20vw;
   width: 25vw;
-  border-radius: 10rem;
+  border-radius: 20vh;
 }
