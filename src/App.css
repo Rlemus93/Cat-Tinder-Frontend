@@ -58,7 +58,7 @@
   color: var(--clr-footer-grey);
   display: flex;
   justify-content: end;
-  position: absolute;
+  position: fixed;
   bottom: 1vh;
   right: 2vw;
   font-size: 2.5vh;
@@ -108,4 +108,20 @@
   right: 20vw;
   width: 25vw;
   border-radius: 20vh;
+}
+
+/* index */
+.cat-index-cont {
+  margin-top: 30px;
+  background-color: var(--clr-bckgrnd-grey);
+  position: relative;
+}
+
+.index-title {
+  color: var(--clr-yellow);
+  text-align: center;
+  font-size: 12vh;
+  font-weight:800;
+  letter-spacing: 10px;
+  text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
 }
