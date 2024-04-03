@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+:root {
+  --clr-bckgrnd-grey: #1C1E1F;
+  --clr-lighter-grey: #2D3032;
+  --clr-footer-grey: #9999;
+  --clr-yellow: #ECD82F;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  font-family: "Raleway", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* nav */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-cont {
+  background-color: var(--clr-bckgrnd-grey);
   color: white;
+  flex-direction: row !important;
+  justify-content: space-between;
+  padding: 1.25rem;
 }
 
-.App-link {
-  color: #61dafb;
+.navigation-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cat-tinder-logo {
+  width: 5rem;
+  margin-left: 1.25rem;
+}
+
+/* footer */
+
+.footer-text {
+  color: var(--clr-footer-grey);
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+}
+
+/* 404 */
+.houston-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
