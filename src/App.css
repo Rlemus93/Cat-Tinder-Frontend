@@ -3,6 +3,8 @@
   --clr-lighter-grey: #2D3032;
   --clr-footer-grey: #9999;
   --clr-yellow: #ECD82F;
+  --clr-white: #fff;
+  --clr-home-grey: #bfbebe99;
 }
 
 * {
@@ -17,6 +19,7 @@
   flex-direction: row !important;
   justify-content: space-between;
   padding: 1.25rem;
+  height: 20vh;
 }
 
 .navigation-links {
@@ -42,10 +45,50 @@
   right: 1rem;
 }
 
+
+
+/* pages */
+
 /* 404 */
 .houston-cont {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+  /* height: 80vh */
+}
+
+/* home */
+.home-cont {
+  background-color: var(--clr-bckgrnd-grey);
+  position: relative;
+  height: 80vh;
+}
+
+.home-title {
+  color: var(--clr-yellow);
+  position: absolute;
+  top: 8vh;
+  left: 28vw;
+  font-size: 8rem;
+  font-weight:800;
+  letter-spacing: 10px;
+  z-index: 1;
+  text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+.home-sub-title {
+  color: var(--clr-home-grey);
+  position: absolute;
+  top: 52vh;
+  left: 28vw;
+  font-size: 1.5rem;
+}
+
+.home-hero-image {
+  position: absolute;
+  top: -10vh;
+  right: 19vw;
+  width: 25vw;
+  border-radius: 10rem;
 }
