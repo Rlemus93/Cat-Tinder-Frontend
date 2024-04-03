@@ -16,9 +16,9 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="navigation-links">
-        <NavLink className="nav-link" to="/cat-index">See All Cats</NavLink>
+        <NavLink className="nav-link" to="/cat-index">Meet All the Cats</NavLink>
         <a
-          href="https://www.austinpetsalive.org/?c_src=GoogleAds-home&c_src2=ads-google-adopt&gad_source=1&gclid=Cj0KCQjw2a6wBhCVARIsABPeH1vNA5Q07ZUYdyQwuS_e5pbG4_FXnxC9BmdcDFmwVU4wRHXKlF3DdfoaAqh6EALw_wcB"
+          href="https://www.petfinder.com/search/cats-for-adoption/us"
           target="blank"
           className="nav-link">
           Adopt a Cat
