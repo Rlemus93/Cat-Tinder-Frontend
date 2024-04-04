@@ -171,12 +171,29 @@
 }
 
 /* index */
-.cat-index-cont {
-  background-color: var(--clr-bckgrnd-grey);
+
+  .cat-index-cards {
+  background-color: transparent;
+  display: flex;
+  gap: 10vh;
+  justify-content: center;
+}
+
+.index-card {
+height: 350px;
 }
 
 .card {
+  display: flex;
   align-items: center;
+  height: 350px;
+}
+
+.index-cont {
+  background-color: var(--clr-bckgrnd-grey);
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 }
 
 .index-title {
@@ -189,7 +206,13 @@
 }
 
 .profile-image {
-  height: 350px;
+  height: 200px;
   border: var(--clr-yellow) 1px solid;
   border-radius: 999px;
+}
+
+/* show */
+
+.show-image {
+  height: 500px;
 }
