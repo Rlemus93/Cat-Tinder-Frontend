@@ -19,7 +19,7 @@
   flex-direction: row !important;
   justify-content: space-between;
   padding: 1.5% 2.5%;
-  height: 20vh;
+  height: fit-content;
   position: relative;
 }
 
@@ -28,6 +28,7 @@
   flex-direction: row;
   align-items: top;
   gap: 1.8vw;
+  height: fit-content;
 }
 
 .nav-link {
@@ -95,7 +96,7 @@
 .home-cont {
   background-color: var(--clr-bckgrnd-grey);
   position: relative;
-  height: 80vh;
+  height: 90.5vh;
 }
 
 .home-title {
