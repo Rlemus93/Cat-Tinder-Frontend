@@ -32,7 +32,7 @@ const CatNew = ({ createNewCat }) => {
                 {...register("name", { required: true })}
               />
               {errors.name && (
-                <span className="form-validations">Name is required</span>
+                <span >Name is required</span>
               )}
             </FormGroup>
           </Col>
@@ -48,7 +48,7 @@ const CatNew = ({ createNewCat }) => {
                 {...register("age", { required: true })}
               />
               {errors.age && (
-                <span className="form-validations">Age is required</span>
+                <span >Age is required</span>
               )}
             </FormGroup>
           </Col>
@@ -63,7 +63,7 @@ const CatNew = ({ createNewCat }) => {
             {...register("enjoys", { required: true })}
           />
           {errors.enjoys && (
-            <span className="form-validations">Enjoys is required</span>
+            <span >Enjoys is required</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -76,11 +76,11 @@ const CatNew = ({ createNewCat }) => {
             {...register("image", { required: true })}
           />
           {errors.image && (
-            <span className="form-validations">Image is required</span>
+            <span >Image is required</span>
           )}
         </FormGroup>
-        <div className="centering-content">
-          <button onClick={handleSubmit} className="nav-button">
+        <div>
+          <button onClick={handleSubmit}>
             Submit
           </button>
         </div>
