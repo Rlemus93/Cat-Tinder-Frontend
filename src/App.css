@@ -173,7 +173,10 @@
 /* index */
 .cat-index-cont {
   background-color: var(--clr-bckgrnd-grey);
-  position: relative;
+}
+
+.card {
+  align-items: center;
 }
 
 .index-title {
@@ -183,4 +186,10 @@
   font-weight:800;
   letter-spacing: 10px;
   text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+  height: 350px;
+  border: var(--clr-yellow) 1px solid;
+  border-radius: 999px;
 }
