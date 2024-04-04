@@ -171,9 +171,29 @@
 }
 
 /* index */
-.cat-index-cont {
+
+  .cat-index-cards {
+  background-color: transparent;
+  display: flex;
+  gap: 10vh;
+  justify-content: center;
+}
+
+.index-card {
+height: 350px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  height: 350px;
+}
+
+.index-cont {
   background-color: var(--clr-bckgrnd-grey);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
 }
 
 .index-title {
@@ -183,4 +203,16 @@
   font-weight:800;
   letter-spacing: 10px;
   text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+  height: 200px;
+  border: var(--clr-yellow) 1px solid;
+  border-radius: 999px;
+}
+
+/* show */
+
+.show-image {
+  height: 500px;
 }

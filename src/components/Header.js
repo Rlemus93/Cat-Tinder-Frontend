@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import { Nav } from "reactstrap"
-import { NavLink } from "react-router-dom"
-import catTinderLogo from "../assets/cat-tinder-logo.png"
-import speechBubbleImage from "../assets/speech-bubble-image.png"
+import React, { useState } from "react";
+import { Nav } from "reactstrap";
+import { NavLink } from "react-router-dom";
+import catTinderLogo from "../assets/cat-tinder-logo.png";
+import speechBubbleImage from "../assets/speech-bubble-image.png";
 
 const Header = () => {
-  const [logoIsHovered, setLogoIsHovered] = useState(false)
+  const [logoIsHovered, setLogoIsHovered] = useState(false);
 
   return (
     <Nav className="nav-cont" navbar>
@@ -29,17 +29,22 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="navigation-links">
-        <NavLink className="nav-link" to="/cat-index">Meet All the Cats</NavLink>
+        <NavLink className="nav-link" to="/cat-index">
+          Meet All the Cats
+        </NavLink>
+        <NavLink className="nav-link" to="/cat-new">
+          Add a Cat
+        </NavLink>
         <a
           href="https://www.petfinder.com/search/cats-for-adoption/us"
           target="blank"
-          className="nav-link">
+          className="nav-link"
+        >
           Adopt a Cat
         </a>
-        <NavLink className="nav-link" to="/cat-new">Add a Cat</NavLink>
       </div>
     </Nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
