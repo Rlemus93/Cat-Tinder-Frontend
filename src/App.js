@@ -67,8 +67,18 @@ const App = () => {
     }
   }
 
-  const deleteCat = (id) => {
-    console.log(id)
+  const deleteCat = async (id) => {
+    try {
+      const deleteResponse = await fetch(`http://localhost:3000/cats/${id}`, {
+        method: "DELETE",
+      })
+      if (!deleteResponse.ok) {
+        throw new Error("Error on the post request for cats")
+      }
+      getCats()
+    } catch (error) {
+      alert("Cat-astrophe! something went wrong:", error.message)
+    }
   }
 
   return (
