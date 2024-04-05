@@ -9,10 +9,19 @@ const CatIndex = ({ cats }) => {
       <div className="cat-index-cards">
         {cats.map((cat) => {
           return (
-            <div className="index-card" key={cat.id}>
               <Card
                 style={{
-                  width: "18rem",
+                  height: "34rem",
+                  width: "25rem",
+                  borderRadius: "60px",
+                  border: "12px solid #fff",
+                  backgroundColor: "transparent",
+                  color: "white",
+                  justifyContent: "space-between",
+                  marginBottom: "2rem",
+                  marginTop: "2rem",
+                  marginLeft: "3rem",
+                  boxShadow: "0.75vw 1.5vh 1px rgba(0, 0, 0, 0.5)"
                 }}
               >
                 <img
@@ -23,11 +32,18 @@ const CatIndex = ({ cats }) => {
                 <CardBody>
                   <CardTitle tag="h5">{cat.name}</CardTitle>
                   <Link to={`/cat-show/${cat.id}`}>
-                    <Button>See More of Me</Button>
+                    <Button
+                      style={{
+                        color: "white",
+                        marginTop: "2rem",
+                      }}
+                    >
+                      See More of Me
+                    </Button>
                   </Link>
                 </CardBody>
               </Card>
-            </div>
+          
           )
         })}
       </div>
