@@ -81,6 +81,11 @@
   font-size: 2.5vh;
 }
 
+.github-links {
+  color: var(--clr-home-grey);
+  text-decoration: none;
+}
+
 /* pages */
 
 /* 404 */
@@ -194,7 +199,7 @@ height: 350px;
   background-color: var(--clr-bckgrnd-grey);
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  min-height: (100dvh - 10dvh);
 }
 
 .index-title {
