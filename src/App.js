@@ -48,10 +48,25 @@ const App = () => {
     }
   }
 
-  const updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+  const updateCat = async (cat, id) => {
+    try {
+      const patchResponse = await fetch(`http://localhost:3000/cats/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cat),
+      })
+      if (!patchResponse.ok) {
+        throw new Error("Error on the post request for cats")
+      }
+      await patchResponse.json()
+      getCats()
+    } catch (error) {
+      alert("Cat-astrophe! something went wrong:", error.message)
+    }
   }
+
   const deleteCat = (id) => {
     console.log(id)
   }

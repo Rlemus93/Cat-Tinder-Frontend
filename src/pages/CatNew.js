@@ -2,12 +2,8 @@ import React, { useState } from "react"
 import { Form, Row, Col, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
-import AvatarEditor from "react-avatar-editor"
 
 const CatNew = ({ createNewCat }) => {
-  const [imageFile, setImageFile] = useState(null)
-  const [croppedImage, setCroppedImage] = useState(null)
-
   const navigate = useNavigate()
   const {
     register,
@@ -69,24 +65,12 @@ const CatNew = ({ createNewCat }) => {
           <input
             id="image"
             name="image"
-            type="file"
+            type="text"
             className="form-control"
-            onChange={(e) => setImageFile(e.target.files[0])}
             {...register("image", { required: true })}
           />
           {errors.image && <span>Image is required</span>}
         </FormGroup>
-        {imageFile && (
-          <AvatarEditor
-            image={imageFile}
-            width={100}
-            height={100}
-            border={50}
-            borderRadius={50}
-            onCrop={(blob) => setCroppedImage(blob)}
-            style={{ marginBottom: "20px" }}
-          />
-        )}
         <div>
           <button onClick={handleSubmit}>Submit</button>
         </div>
