@@ -191,6 +191,7 @@
 
 .index-cont {
   background-color: var(--clr-bckgrnd-grey);
+  min-height: calc(100dvh - 10dvh);
   display: flex;
   flex-direction: column;
 }
@@ -221,6 +222,7 @@
 
 .cat-profile-cont {
   border: 5vh solid var(--clr-bckgrnd-grey);
+  min-height: calc(100dvh - 10dvh);
 }
 
 .left-show-col {
