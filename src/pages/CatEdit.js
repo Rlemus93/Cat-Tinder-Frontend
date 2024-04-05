@@ -1,25 +1,25 @@
-import React from "react";
-import { Form, Row, Col, FormGroup, Label, Button } from "reactstrap";
-import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Form, Row, Col, FormGroup, Label, Button } from "reactstrap"
+import { useForm } from "react-hook-form"
+import { useNavigate, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const CatEdit = ({ cats, updateCat }) => {
-  const { id } = useParams();
-  let currentCat = cats.find((catObject) => catObject.id === +id);
-  console.log(currentCat.id);
+  const { id } = useParams()
+  let currentCat = cats.find((catObject) => catObject.id === +id)
+  console.log(currentCat.id)
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = (catData) => {
-    updateCat(catData, currentCat.id);
-    navigate(`/cat-show/${currentCat.id}`);
-  };
+    updateCat(catData, currentCat.id)
+    navigate(`/cat-show/${currentCat.id}`)
+  }
 
   return (
     <>
@@ -98,7 +98,7 @@ const CatEdit = ({ cats, updateCat }) => {
         </div>
       </Form>
     </>
-  );
-};
+  )
+}
 
-export default CatEdit;
+export default CatEdit

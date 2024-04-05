@@ -1,6 +1,6 @@
-import React from "react";
-import { Card, CardBody, CardTitle, Button } from "reactstrap";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Card, CardBody, CardTitle, Button } from "reactstrap"
+import { Link } from "react-router-dom"
 
 const CatIndex = ({ cats }) => {
   return (
@@ -28,11 +28,11 @@ const CatIndex = ({ cats }) => {
                 </CardBody>
               </Card>
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CatIndex;
+export default CatIndex
