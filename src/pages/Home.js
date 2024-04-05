@@ -24,12 +24,12 @@ const Home = () => {
             icon={faCircleArrowRight}
           />
         </h3>
+        </Link>
         <img
           className="home-hero-image-shadow"
           src={heroImage}
           alt="cat with sunglasses' shadow"
         />
-      </Link>
       <img
         className="home-hero-image"
         src={heroImage}
