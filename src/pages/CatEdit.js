@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 const CatEdit = ({ cats, updateCat }) => {
   const { id } = useParams()
   let currentCat = cats.find((catObject) => catObject.id === +id)
-  console.log(currentCat.id)
 
   const navigate = useNavigate()
   const {
