@@ -4,9 +4,12 @@ import { Button } from "reactstrap"
 import { Link } from "react-router-dom"
 import { Row, Col } from "reactstrap"
 
-const CatShow = ({ cats }) => {
+const CatShow = ({ cats, deleteCat }) => {
   const { id } = useParams()
   const cat = cats.find((catObject) => catObject.id === +id)
+  const handleDelete = (catId) => {
+    deleteCat(catId)
+  }
   return (
     <div className="cat-profile-cont">
       <Row>
@@ -26,6 +29,7 @@ const CatShow = ({ cats }) => {
           </Link>
           <Link to={`/cat-index`}>
             <Button>Back</Button>
+            <Button onClick={handleDelete(cat.id)}>Delete</Button>
           </Link>
         </Col>
         <Col md={6}></Col>
