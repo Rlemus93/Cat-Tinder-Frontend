@@ -9,41 +9,47 @@ const CatIndex = ({ cats }) => {
       <div className="cat-index-cards">
         {cats.map((cat) => {
           return (
-              <Card
-                style={{
-                  height: "34rem",
-                  width: "25rem",
-                  borderRadius: "60px",
-                  border: "12px solid #fff",
-                  backgroundColor: "transparent",
-                  color: "white",
-                  justifyContent: "space-between",
-                  marginBottom: "2rem",
-                  marginTop: "2rem",
-                  marginLeft: "3rem",
-                  boxShadow: "0.75vw 1.5vh 1px rgba(0, 0, 0, 0.5)"
-                }}
-              >
+            <Card
+              style={{
+                height: "34dvh",
+                width: "15dvw",
+                borderRadius: "5vh",
+                border: "0.8dvh solid #fff",
+                backgroundColor: "transparent",
+                color: "white",
+                boxShadow: "0.75vw 1.5vh 1px rgba(0, 0, 0, 0.5)",
+              }}
+              key={cat.id}
+            >
+              <div className="profile-image-cont">
                 <img
                   className="profile-image"
                   alt={`profile of ${cat.name}`}
                   src={cat.image}
                 />
-                <CardBody>
-                  <CardTitle tag="h5">{cat.name}</CardTitle>
-                  <Link to={`/cat-show/${cat.id}`}>
-                    <Button
-                      style={{
-                        color: "white",
-                        marginTop: "2rem",
-                      }}
-                    >
-                      See More of Me
-                    </Button>
-                  </Link>
-                </CardBody>
-              </Card>
-          
+              </div>
+              <CardBody
+                style={{
+                  textAlign: "center",
+                  padding: "2vh",
+                }}
+              >
+                <CardTitle tag="h5">{cat.name}</CardTitle>
+                <Link to={`/cat-show/${cat.id}`}>
+                  <Button
+                    style={{
+                      color: "white",
+                      marginTop: "1.5vh",
+                      fontSize: "1.75vh",
+                      padding: "0.75vh",
+                      borderRadius: "1vh",
+                    }}
+                  >
+                    See More of Me
+                  </Button>
+                </Link>
+              </CardBody>
+            </Card>
           )
         })}
       </div>

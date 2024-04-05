@@ -76,9 +76,9 @@
   display: flex;
   justify-content: end;
   position: fixed;
-  bottom: 1vh;
-  right: 2vw;
-  font-size: 2.5vh;
+  bottom: 0.9vh;
+  right: 1.5vw;
+  font-size: 2vh;
 }
 
 .github-links {
@@ -94,7 +94,6 @@
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  /* height: 80vh */
 }
 
 /* home */
@@ -178,30 +177,17 @@
 
 /* index */
 
-.card {
-  position: relative;
-  display: grid;
-  align-items: center;
-  text-align: center;
-  flex: 0 0 auto;
-  width: calc(100% / 3);
-  height: 100%;
-}
-
-
 .card-title {
-  font-size: 2rem;
-  margin-top: 2rem;
-  position: relative;
+  font-size: 3vh;
 }
 
 .cat-index-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(calc(20.33% - 0.5rem), 1fr));
-  gap: .5vw;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4dvw;
+  padding: 7vh 5vw;
 }
-
 
 .index-cont {
   background-color: var(--clr-bckgrnd-grey);
@@ -218,11 +204,17 @@
   text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
 }
 
+.profile-image-cont {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  padding: 1vh 0.5vw;
+}
+
 .profile-image {
-  height: 200px;
-  border: var(--clr-yellow) 10px solid;
+  height: 100%;
+  border: var(--clr-yellow) 0.6dvh solid;
   border-radius: 999px;
-  margin-top: 6rem;
 }
 
 /* show */
