@@ -69,7 +69,7 @@ const CatNew = ({ createNewCat }) => {
           <input
             id="image"
             name="image"
-            type="text"
+            type="file"
             className="form-control"
             onChange={(e) => setImageFile(e.target.files[0])}
             {...register("image", { required: true })}
