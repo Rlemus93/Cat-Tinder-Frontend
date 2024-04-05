@@ -18,10 +18,12 @@ const CatIndex = ({ cats }) => {
                 backgroundColor: "transparent",
                 color: "white",
                 boxShadow: "0.75vw 1.5vh 1px rgba(0, 0, 0, 0.5)",
+                position: "relative"
               }}
               key={cat.id}
             >
               <div className="profile-image-cont">
+                <div className="upper-card-background"></div>
                 <img
                   className="profile-image"
                   alt={`profile of ${cat.name}`}
@@ -36,16 +38,8 @@ const CatIndex = ({ cats }) => {
               >
                 <CardTitle tag="h5">{cat.name}</CardTitle>
                 <Link to={`/cat-show/${cat.id}`}>
-                  <button
-                    style={{
-                      color: "white",
-                      marginTop: "1.5vh",
-                      fontSize: "1.75vh",
-                      padding: "0.75vh",
-                      borderRadius: "1vh",
-                    }}
-                  >
-                    See More of Me
+                  <button className="buttons">
+                    See More
                   </button>
                 </Link>
               </CardBody>
