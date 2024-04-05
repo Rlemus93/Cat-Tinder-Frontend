@@ -9,8 +9,11 @@ test("renders the Footer component", () => {
       <Footer />
     </BrowserRouter>
   )
-  const footerTextContent = screen.getByText(
-    /2024 Ryan Lemus | Amir Jackson | Morgan Smith/
-  )
-  expect(footerTextContent).toBeInTheDocument()
+  const ryanLink = screen.getByText("Ryan Lemus")
+  const amirLink = screen.getByText("Amir Jackson")
+  const morganLink = screen.getByText("Morgan Smith")
+
+  expect(ryanLink).toHaveAttribute("href", "https://github.com/Rlemus93")
+  expect(amirLink).toHaveAttribute("href", "https://github.com/Rashadjaxon")
+  expect(morganLink).toHaveAttribute("href", "https://github.com/smorgannicole")
 })
