@@ -1,5 +1,5 @@
 import React from "react"
-import { Form, Row, Col, FormGroup, Label, Button } from "reactstrap"
+import { Form, Row, Col, FormGroup, Label } from "reactstrap"
 import { useForm } from "react-hook-form"
 import { useNavigate, useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
@@ -16,6 +16,7 @@ const CatEdit = ({ cats, updateCat }) => {
   } = useForm()
 
   const onSubmit = (catData) => {
+    console.log(catData)
     updateCat(catData, currentCat.id)
     navigate(`/cat-show/${currentCat.id}`)
   }
@@ -88,11 +89,11 @@ const CatEdit = ({ cats, updateCat }) => {
           )}
         </FormGroup>
         <div className="centering-content">
-          <Button onClick={handleSubmit} className="nav-button">
+          <button onClick={handleSubmit} className="nav-button">
             Submit
-          </Button>
+          </button>
           <Link to={`/cat-show/${currentCat.id}`}>
-            <Button>Cancel</Button>
+            <button>Cancel</button>
           </Link>
         </div>
       </Form>

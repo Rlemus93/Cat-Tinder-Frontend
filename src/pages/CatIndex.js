@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, CardBody, CardTitle, Button } from "reactstrap"
+import { Card, CardBody, CardTitle } from "reactstrap"
 import { Link } from "react-router-dom"
 
 const CatIndex = ({ cats }) => {
@@ -36,7 +36,7 @@ const CatIndex = ({ cats }) => {
               >
                 <CardTitle tag="h5">{cat.name}</CardTitle>
                 <Link to={`/cat-show/${cat.id}`}>
-                  <Button
+                  <button
                     style={{
                       color: "white",
                       marginTop: "1.5vh",
@@ -46,7 +46,7 @@ const CatIndex = ({ cats }) => {
                     }}
                   >
                     See More of Me
-                  </Button>
+                  </button>
                 </Link>
               </CardBody>
             </Card>

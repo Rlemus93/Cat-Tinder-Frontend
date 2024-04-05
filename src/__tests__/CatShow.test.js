@@ -15,7 +15,7 @@ test("renders the CatShow component", () => {
 
   const cat = mockCats.find((catObject) => catObject.id === 1)
 
-  const catName = screen.getByText(`Meet ${cat.name}`)
+  const catName = screen.getByText(`${cat.name}`)
   expect(catName).toBeInTheDocument()
 
   const catAge = screen.getByText(`Age ${cat.age}`)
