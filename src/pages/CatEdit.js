@@ -33,7 +33,7 @@ const CatEdit = ({ cats, updateCat }) => {
                 id="name"
                 name="name"
                 type="text"
-                // defaultValue={currentCat.name}
+                defaultValue={currentCat.name}
                 className="form-control"
                 {...register("name", { required: true })}
               />
@@ -49,7 +49,7 @@ const CatEdit = ({ cats, updateCat }) => {
                 id="age"
                 name="age"
                 type="number"
-                // defaultValue={currentCat.age}
+                defaultValue={currentCat.age}
                 min="0"
                 className="form-control"
                 {...register("age", { required: true })}
@@ -80,7 +80,7 @@ const CatEdit = ({ cats, updateCat }) => {
             id="image"
             name="image"
             type="text"
-            // defaultValue={currentCat.image}
+            defaultValue={currentCat.image}
             className="form-control"
             {...register("image", { required: true })}
           />
