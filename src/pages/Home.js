@@ -1,9 +1,9 @@
-import React from "react";
-import heroImage from "../assets/hero-image.png";
-import accentHeroImage from "../assets/accent-hero-image.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import React from "react"
+import heroImage from "../assets/hero-image.png"
+import accentHeroImage from "../assets/accent-hero-image.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "react-router-dom"
 
 const Home = () => {
   return (
@@ -36,7 +36,7 @@ const Home = () => {
         alt="grey cat with glasses on"
       />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

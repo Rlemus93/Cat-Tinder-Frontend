@@ -19,7 +19,7 @@
   flex-direction: row !important;
   justify-content: space-between;
   padding: 1.5% 2.5%;
-  height: 20vh;
+  height: 10dvh;
   position: relative;
 }
 
@@ -28,6 +28,7 @@
   flex-direction: row;
   align-items: top;
   gap: 1.8vw;
+  height: fit-content;
 }
 
 .nav-link {
@@ -75,9 +76,14 @@
   display: flex;
   justify-content: end;
   position: fixed;
-  bottom: 1vh;
-  right: 2vw;
-  font-size: 2.5vh;
+  bottom: 0.9vh;
+  right: 1.5vw;
+  font-size: 2vh;
+}
+
+.github-links {
+  color: var(--clr-home-grey);
+  text-decoration: none;
 }
 
 /* pages */
@@ -88,20 +94,19 @@
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  /* height: 80vh */
 }
 
 /* home */
 .home-cont {
   background-color: var(--clr-bckgrnd-grey);
   position: relative;
-  height: 80vh;
+  height: calc(100dvh - 10dvh);
 }
 
 .home-title {
   color: var(--clr-yellow);
   position: absolute;
-  top: 8vh;
+  top: 18vh;
   left: 28vw;
   font-size: 14vh;
   font-weight:800;
@@ -113,7 +118,7 @@
 .home-sub-title {
   color: var(--clr-home-grey);
   position: absolute;
-  top: 45vh;
+  top: 55vh;
   left: 28vw;
   font-size: 3.5vh;
 }
@@ -142,7 +147,7 @@
 
 .home-hero-image {
   position: absolute;
-  top: 0vh;
+  top: 10vh;
   right: 19vw;
   width: 25vw;
   border-radius: 20vh;
@@ -150,7 +155,7 @@
 
 .home-hero-image-shadow {
   position: absolute;
-  top: -5vh;
+  top: 5vh;
   right: 16vw;
   width: 25vw;
   border-radius: 20vh;
@@ -172,28 +177,22 @@
 
 /* index */
 
-  .cat-index-cards {
-  background-color: transparent;
+.card-title {
+  font-size: 3vh;
+}
+
+.cat-index-cards {
   display: flex;
-  gap: 10vh;
   justify-content: center;
-}
-
-.index-card {
-height: 350px;
-}
-
-.card {
-  display: flex;
-  align-items: center;
-  height: 350px;
+  flex-wrap: wrap;
+  gap: 4dvw;
+  padding: 7vh 5vw;
 }
 
 .index-cont {
   background-color: var(--clr-bckgrnd-grey);
   display: flex;
   flex-direction: column;
-  height: 80vh;
 }
 
 .index-title {
@@ -205,14 +204,31 @@ height: 350px;
   text-shadow: 10px 15px 1px rgba(0, 0, 0, 0.5);
 }
 
+.profile-image-cont {
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  padding: 1vh 0.5vw;
+}
+
 .profile-image {
-  height: 200px;
-  border: var(--clr-yellow) 1px solid;
+  height: 100%;
+  border: var(--clr-yellow) 0.6dvh solid;
   border-radius: 999px;
 }
 
 /* show */
 
+.cat-profile-cont {
+  border: 5vh solid var(--clr-bckgrnd-grey);
+}
+
+.left-show-col {
+  margin: 0px 3%;
+  padding: 3% 0;
+}
+
 .show-image {
-  height: 500px;
+  height: 20vh;
+  border-radius: 100%;
 }

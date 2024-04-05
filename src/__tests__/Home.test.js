@@ -18,8 +18,5 @@ test("renders the Home component", () => {
 
   const homeHeroImage = screen.getByAltText("grey cat with glasses on")
   expect(homeHeroImage).toBeInTheDocument()
-  expect(homeHeroImage).toHaveAttribute(
-    "src",
-    heroImage
-  )
+  expect(homeHeroImage).toHaveAttribute("src", heroImage)
 })

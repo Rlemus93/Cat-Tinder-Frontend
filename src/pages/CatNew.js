@@ -1,20 +1,24 @@
-import React from "react";
-import { Form, Row, Col, FormGroup, Label } from "reactstrap";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { Form, Row, Col, FormGroup, Label } from "reactstrap"
+import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
+import AvatarEditor from "react-avatar-editor"
 
 const CatNew = ({ createNewCat }) => {
-  const navigate = useNavigate();
+  const [imageFile, setImageFile] = useState(null)
+  const [croppedImage, setCroppedImage] = useState(null)
+
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = (catData) => {
-    createNewCat(catData);
-    navigate("/cat-index");
-  };
+    createNewCat(catData)
+    navigate("/cat-index")
+  }
 
   return (
     <>
@@ -31,9 +35,7 @@ const CatNew = ({ createNewCat }) => {
                 className="form-control"
                 {...register("name", { required: true })}
               />
-              {errors.name && (
-                <span >Name is required</span>
-              )}
+              {errors.name && <span>Name is required</span>}
             </FormGroup>
           </Col>
           <Col md={6}>
@@ -47,9 +49,7 @@ const CatNew = ({ createNewCat }) => {
                 className="form-control"
                 {...register("age", { required: true })}
               />
-              {errors.age && (
-                <span >Age is required</span>
-              )}
+              {errors.age && <span>Age is required</span>}
             </FormGroup>
           </Col>
         </Row>
@@ -62,9 +62,7 @@ const CatNew = ({ createNewCat }) => {
             className="form-control"
             {...register("enjoys", { required: true })}
           />
-          {errors.enjoys && (
-            <span >Enjoys is required</span>
-          )}
+          {errors.enjoys && <span>Enjoys is required</span>}
         </FormGroup>
         <FormGroup>
           <Label for="image">Image URL</Label>
@@ -73,20 +71,28 @@ const CatNew = ({ createNewCat }) => {
             name="image"
             type="text"
             className="form-control"
+            onChange={(e) => setImageFile(e.target.files[0])}
             {...register("image", { required: true })}
           />
-          {errors.image && (
-            <span >Image is required</span>
-          )}
+          {errors.image && <span>Image is required</span>}
         </FormGroup>
+        {imageFile && (
+          <AvatarEditor
+            image={imageFile}
+            width={100}
+            height={100}
+            border={50}
+            borderRadius={50}
+            onCrop={(blob) => setCroppedImage(blob)}
+            style={{ marginBottom: "20px" }}
+          />
+        )}
         <div>
-          <button onClick={handleSubmit}>
-            Submit
-          </button>
+          <button onClick={handleSubmit}>Submit</button>
         </div>
       </Form>
     </>
-  );
-};
+  )
+}
 
-export default CatNew;
+export default CatNew
