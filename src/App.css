@@ -22,6 +22,7 @@
   border-radius: 1vh;
   font-weight: 700;
   height: 3.5vh;
+  font-size: 2dvh !important;
 }
 
 .buttons:hover {
@@ -257,6 +258,7 @@
 .index-heart-and-btn {
   display: flex;
   justify-content: center;
+  justify-content: space-evenly;
   margin-top: 2.5vh;
 }
 
