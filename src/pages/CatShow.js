@@ -64,7 +64,7 @@ const CatShow = ({ cats, deleteCat }) => {
             <FontAwesomeIcon className="show-icon" icon={faPenToSquare} />
           </Link>
           <Link to="/cat-index">
-            <FontAwesomeIcon className="show-icon" icon={faTrash} />
+            <FontAwesomeIcon onClick={handleDelete} className="show-icon" icon={faTrash} />
           </Link>
         </div>
       </div>
