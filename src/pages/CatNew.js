@@ -35,7 +35,7 @@ const CatNew = ({ createNewCat }) => {
                 className="form-control"
                 {...register("name", { required: true })}
               />
-              {errors.name && <span>Name is required</span>}
+              {errors.name && <span className="error-message">Name is required</span>}
             </FormGroup>
           </Col>
           <Col md={6}>
@@ -53,12 +53,13 @@ const CatNew = ({ createNewCat }) => {
                 className="form-control"
                 {...register("age", { required: true })}
               />
-              {errors.age && <span>Age is required</span>}
+              {errors.age && <span className="error-message">Age is required</span>}
             </FormGroup>
           </Col>
         </Row>
         <FormGroup>
           <Label for="enjoys">What does your cat enjoy doing?</Label>
+          <p style={{color:"#999"}}>{"(must be 10 characters long)"}</p>
           <input
             style={{
               width: "50dvw",
@@ -69,7 +70,7 @@ const CatNew = ({ createNewCat }) => {
             className="form-control"
             {...register("enjoys", { required: true })}
           />
-          {errors.enjoys && <span>Enjoys is required</span>}
+          {errors.enjoys && <span className="error-message">Enjoys is required</span>}
         </FormGroup>
         <FormGroup>
           <Label for="image">Image URL</Label>
@@ -83,7 +84,7 @@ const CatNew = ({ createNewCat }) => {
             className="form-control"
             {...register("image", { required: true })}
           />
-          {errors.image && <span>Image is required</span>}
+          {errors.image && <span className="error-message">Image is required</span>}
         </FormGroup>
         <div>
           <button

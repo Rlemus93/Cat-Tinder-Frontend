@@ -98,7 +98,7 @@
 
 .cat-tinder-logo {
   position: absolute;
-  width: 4vw;
+  width: 3.5vw;
   top: 1vh;
   left: 2vw;
   z-index: 2;
@@ -106,7 +106,7 @@
 
 .speech-bubble-image {
   position: absolute;
-  width: 6vw;
+  width: 5vw;
   top: -1.8vh;
   left: 5.5vw;
   z-index: 2;
@@ -454,8 +454,8 @@
 
 /* Edit and New  */
 
-.edit-cont {
-  margin-top: 3dvh;
+.error-message {
+  color: red;
 }
 
 .cat-new-title {
@@ -473,6 +473,10 @@
   font-size: 5vh;
   font-weight: 600;
   letter-spacing: 5px;
+}
+
+.edit-cont {
+  margin-top: 3dvh;
 }
 
 .form-cont {

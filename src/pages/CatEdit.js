@@ -44,7 +44,7 @@ const CatEdit = ({ cats, updateCat }) => {
                 {...register("name", { required: true })}
               />
               {errors.name && (
-                <span className="form-validations">Name is required</span>
+                <span className="error-message form-validations">Name is required</span>
               )}
             </FormGroup>
           </Col>
@@ -65,13 +65,14 @@ const CatEdit = ({ cats, updateCat }) => {
                 {...register("age", { required: true })}
               />
               {errors.age && (
-                <span className="form-validations">Age is required</span>
+                <span className="error-message form-validations">Age is required</span>
               )}
             </FormGroup>
           </Col>
         </Row>
         <FormGroup>
           <Label for="enjoys">What does your cat enjoy doing?</Label>
+          <p style={{color:"#999"}}>{"(must be 10 characters long)"}</p>
           <input
             style={{
               width: "50dvw",
@@ -84,7 +85,7 @@ const CatEdit = ({ cats, updateCat }) => {
             {...register("enjoys", { required: true })}
           />
           {errors.enjoys && (
-            <span className="form-validations">Enjoys is required</span>
+            <span className="error-message form-validations">Enjoys is required</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -101,7 +102,7 @@ const CatEdit = ({ cats, updateCat }) => {
             {...register("image", { required: true })}
           />
           {errors.image && (
-            <span className="form-validations">Image is required</span>
+            <span className="error-message form-validations">Image is required</span>
           )}
         </FormGroup>
         <div className="centering-content">
