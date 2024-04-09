@@ -11,31 +11,46 @@
   font-family: "Raleway", sans-serif;
 }
 
-.buttons {
-  border: 1px solid var(--clr-bckgrnd-grey);
-  background-color: var(--clr-white);
+.see-more-button {
+  font-size: 2dvh !important;
   border-radius: 1vh;
   font-weight: 700;
+  background-color: #4BCBFF;
+  border: none;
+  color: var(--clr-white);
+  text-align: center;
   height: 4vh;
   width: 8vw;
-  font-size: 2dvh !important;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none !important;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.buttons:hover {
-  .arrow-right {
-    opacity: 1;
-    display: inline;
-    transition: opacity 0.3s ease;
-  }
+.see-more-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.arrow-right {
-  display: none;
+.see-more-button span:after {
+  content: '\00bb';
+  position: absolute;
   opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
+
+.see-more-button:hover span {
+  padding-right: 25px;
+}
+
+.see-more-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 
 /* nav */
 
@@ -171,15 +186,6 @@
   width: 91.5%;
 }
 
-/* .home-hero-image {
-  position: absolute;
-  top: 10vh;
-  right: 19vw;
-  width: 25vw;
-  border-radius: 16vh;
-  transition: transform 0.5s ease;
-} */
-
 .home-hero-image-shadow {
   position: absolute;
   top: 7vh;
@@ -287,6 +293,7 @@
 .index-heart-and-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   justify-content: space-evenly;
   margin-top: 2.5vh;
 }

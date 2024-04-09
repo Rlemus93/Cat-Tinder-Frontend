@@ -73,13 +73,13 @@ const CatIndex = ({ cats }) => {
                   />
 
                   <Link to={`/cat-show/${cat.id}`}>
-                    <button className="buttons">
-                      <FontAwesomeIcon
+                    <button className="see-more-button">
+                      {/* <FontAwesomeIcon
                         style={{ height: "2vh", marginRight: "0.5vw" }}
                         className="show-icon arrow-right"
                         icon={faArrowRight}
-                      />
-                      See More
+                      /> */}
+                      <span>See More </span>
                     </button>
                   </Link>
                 </div>
