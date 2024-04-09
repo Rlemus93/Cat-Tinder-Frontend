@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import heroImage from "../assets/hero-image.png"
 import heroImage2 from "../assets/hero-image-2.png"
+import heroImage3 from "../assets/hero-image-3.png"
 import heroImage4 from "../assets/hero-image-4.png"
 import heroImage5 from "../assets/hero-image-5.png"
 import accentHeroImage from "../assets/accent-hero-image.png"
@@ -10,14 +11,14 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0)
-  const heroImages = [heroImage, heroImage2, heroImage4, heroImage5]
+  const heroImages = [heroImage, heroImage2, heroImage3, heroImage4, heroImage5]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) =>
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       )
-    }, 3000)
+    }, 4000)
     return () => clearInterval(interval)
   }, [])
   return (

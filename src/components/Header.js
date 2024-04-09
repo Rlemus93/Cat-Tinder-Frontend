@@ -35,7 +35,6 @@ const Header = () => {
         <NavLink className="nav-link" to="/cat-new">
           Add a Cat
         </NavLink>
-
         <a
           href="https://www.petfinder.com/search/cats-for-adoption/us"
           target="blank"

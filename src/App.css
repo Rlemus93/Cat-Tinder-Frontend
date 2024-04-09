@@ -193,7 +193,7 @@
   width: 25vw;
   border-radius: 16vh;
   opacity: 15%;
-  transition: transform 0.5s ease;
+  transition: transform 2s ease;
 }
 
 .home-hero-image {
@@ -202,7 +202,7 @@
   right: 19vw;
   width: 25vw;
   border-radius: 16vh;
-  transition: transform 0.5s ease;
+  transition: transform 2s ease;
 }
 
 .home-hero-image.active {
@@ -339,7 +339,7 @@
   z-index: 2;
   border-radius: 5vh;
   border: 1px solid var(--clr-bckgrnd-grey);
-  animation: slideOutLeft 0.5s ease;
+  animation: slideOutLeft 1s ease;
 }
 
 .show-text {
