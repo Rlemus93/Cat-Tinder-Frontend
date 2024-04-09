@@ -13,13 +13,17 @@ import streetKitties from "../assets/street-kitties.jpg"
 import flowerCat from "../assets/flower-cat.jpg"
 import roofKitties from "../assets/roof-kitties.jpg"
 import tableKitties from "../assets/table-kitties.jpg"
-
 const CatShow = ({ cats, deleteCat }) => {
   const [isRendered, setIsRendered] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const [backgroundImage, setBackgroundImage] = useState("")
+
   const { id } = useParams()
   const cat = cats.find((catObject) => catObject.id === +id)
+
   const handleDelete = () => {
     deleteCat(cat.id)
+    setShowConfirmation(false)
   }
 
   useEffect(() => {
@@ -41,8 +45,12 @@ const CatShow = ({ cats, deleteCat }) => {
         img.onload = resolve
       })
     })
+
     Promise.all(imagePromises)
-      .then(() => console.log("Background images loaded"))
+      .then(() => {
+        console.log("Background images loaded")
+        setBackgroundImage(getRandomIndex())
+      })
       .catch((error) =>
         console.error("Error loading background images:", error)
       )
@@ -68,7 +76,7 @@ const CatShow = ({ cats, deleteCat }) => {
       <div className="left-half"></div>
       <img
         className={`background-image ${isRendered ? "slideOutLeft" : ""}`}
-        src={getRandomIndex()}
+        src={backgroundImage}
         alt={`random background for ${cat.name}`}
       />
       <img
@@ -92,14 +100,33 @@ const CatShow = ({ cats, deleteCat }) => {
           <Link to={`/cat-edit/${cat.id}`}>
             <FontAwesomeIcon className="show-icon" icon={faPenToSquare} />
           </Link>
-          <Link to="/cat-index">
-            <FontAwesomeIcon
-              onClick={handleDelete}
-              className="show-icon"
-              icon={faTrash}
-            />
-          </Link>
+          <FontAwesomeIcon
+            className="show-icon"
+            icon={faTrash}
+            onClick={() => setShowConfirmation(true)}
+            style={{ cursor: "pointer" }}
+          />
         </div>
+        {showConfirmation && (
+          <div className="confirmation-popup">
+            <p
+              style={{ fontSize: "2.5vh" }}
+            >{`Are you sure you want to delete ${cat.name}?`}</p>
+            <div className="popup-buttons">
+              <button
+                onClick={() => setShowConfirmation(false)}
+                className="no-btn"
+              >
+                No
+              </button>
+              <Link to="/cat-index">
+                <button onClick={handleDelete} className="yes-btn">
+                  Yes
+                </button>
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   ) : null

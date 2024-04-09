@@ -12,9 +12,9 @@ test("renders the CatNew component", () => {
   const newPageHeader = screen.getByText("Let's Meet Your Cat")
   expect(newPageHeader).toBeInTheDocument()
 
-  const catNameInput = screen.getByLabelText("Enter Your Cat's Name")
+  const catNameInput = screen.getByLabelText("Cat's Name")
   expect(catNameInput).toBeInTheDocument()
-  const catAgeInput = screen.getByLabelText("Enter Your Cat's Age")
+  const catAgeInput = screen.getByLabelText("Cat's Age")
   expect(catAgeInput).toBeInTheDocument()
   const catEnjoysInput = screen.getByLabelText(/What does your cat enjoy doing/)
   expect(catEnjoysInput).toBeInTheDocument()

@@ -5,6 +5,10 @@
   --clr-yellow: #ECD82F;
   --clr-white: #fff;
   --clr-home-grey: #bfbebe99;
+  --clr-btn-blue: #4BCBFF;
+  --clr-like-red: #FF5252;
+  --clr-yes-hover: #37B7EB;
+  --clr-no-hover: #7F7F7F;
 }
 
 * {
@@ -15,7 +19,7 @@
   font-size: 2dvh !important;
   border-radius: 1vh;
   font-weight: 700;
-  background-color: #4BCBFF;
+  background-color: var(--clr-btn-blue);
   border: none;
   color: var(--clr-white);
   text-align: center;
@@ -51,12 +55,18 @@
   right: 0;
 }
 
+.loading {
+  position: absolute;
+  top: 40vh;
+  left: 40vw;
+  font-size: 10vh;
+}
 
 /* nav */
 
 .nav-cont {
   background-color: var(--clr-bckgrnd-grey);
-  color: white;
+  color: var(--clr-white);
   flex-direction: row !important;
   justify-content: space-between;
   padding: 1.5% 2.5%;
@@ -89,7 +99,7 @@
 .cat-tinder-logo {
   position: absolute;
   width: 4vw;
-  top: 0.5vh;
+  top: 1vh;
   left: 2vw;
   z-index: 2;
 }
@@ -135,6 +145,10 @@
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+}
+
+.not-found-image {
+  height: 65dvh;
 }
 
 /* home */
@@ -191,9 +205,9 @@
   top: 7vh;
   right: 17vw;
   width: 25vw;
-  border-radius: 16vh;
-  opacity: 15%;
-  transition: transform 2s ease;
+  border-radius: 13vh;
+  opacity: 10%;
+  transition: transform 3s;
 }
 
 .home-hero-image {
@@ -201,8 +215,8 @@
   top: 10vh;
   right: 19vw;
   width: 25vw;
-  border-radius: 16vh;
-  transition: transform 2s ease;
+  border-radius: 13vh;
+  transition: transform 3s;
 }
 
 .home-hero-image.active {
@@ -216,7 +230,6 @@
 .home-hero-image-shadow.inactive {
   transform: translateX(900%);
 }
-
 
 .accent-hero-image {
   position: absolute;
@@ -251,6 +264,7 @@
   min-height: calc(100dvh - 10dvh);
   display: flex;
   flex-direction: column;
+  padding: 5dvh;
 }
 
 .index-title {
@@ -259,7 +273,15 @@
   font-size: 7vh;
   font-weight: 600;
   letter-spacing: 5px;
-  text-shadow: 0.25vw 0.25vh 1px rgba(236, 214, 31, 0.5);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vh;
+  gap: 2dvw;
+  margin-top: 5vh;
 }
 
 .profile-image-cont {
@@ -301,7 +323,7 @@
 .heart-icon {
   cursor: pointer;
   margin-right: 10px;
-  color: #FF5252;
+  color: var(--clr-like-red);
   font-size: 3.5vh;
   transition: color 0.3s ease;
 }
@@ -354,6 +376,11 @@
 .show-icon {
   color: var(--clr-bckgrnd-grey);
   height: 3dvh;
+  transition: opacity 0.3s ease;
+}
+
+.show-icon:hover {
+  opacity: 50%;
 }
 
 .show-icons {
@@ -372,12 +399,67 @@
   }
 }
 
+.confirmation-popup {
+  position: absolute;
+  bottom: -50vh;
+  left: 7vw;
+  transform: translate(-50%, -50%);
+  background-color: var(--clr-white);
+  border-top-right-radius: 5vh;
+  padding: 2vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 35vw;
+  height: 81.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-buttons {
+  width: 3vw;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-popup button {
+  color: var(--clr-white);
+  border: none;
+  border-radius: 1vh;
+  padding: 1vh;
+  cursor: pointer;
+  margin-right: 1vw;
+  width: 3vw;
+  transition: background-color 0.3s ease;
+  font-size: 2vh;
+}
+
+.no-btn {
+  background-color: var(--clr-btn-blue);
+}
+
+.no-btn:hover {
+  background-color: var(--clr-yes-hover);
+}
+
+.yes-btn {
+  background-color: var(--clr-footer-grey);
+  transition: background-color 0.3s ease;
+}
+
+.yes-btn:hover {
+  background-color: var(--clr-no-hover);
+}
 
 /* Edit and New  */
 
+.edit-cont {
+  margin-top: 3dvh;
+}
+
 .cat-new-title {
   text-align: center;
-  margin-top: 1vh;
   margin-bottom: 3vh;
   font-size: 5vh;
   font-weight: 600;
@@ -404,10 +486,11 @@
 }
 
 .form-buttons {
-  color: white;
+  color: var(--clr-white);
   border: none;
   width: 8vw;
   border-radius: 1vh;
+  transition: opacity 0.3s ease;
 }
 
 .form-buttons:hover{

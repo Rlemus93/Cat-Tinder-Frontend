@@ -22,18 +22,20 @@ const CatEdit = ({ cats, updateCat }) => {
   }
 
   return (
-    <>
+    <div className="edit-cont">
       <h1 className="cat-edit-title">Edit Your Cat</h1>
       <Form className="form-cont" onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col md={6}>
             <FormGroup>
-              <Label style={{width:"15dvw"}} for="name">Change Cat's Name</Label>
+              <Label style={{ width: "15dvw" }} for="name">
+                Change Cat's Name
+              </Label>
               <input
-              style={{
-                width: "10dvw",
-                marginLeft: "2.3vw"
-              }}
+                style={{
+                  width: "10dvw",
+                  marginLeft: "2.3vw",
+                }}
                 id="name"
                 name="name"
                 type="text"
@@ -50,10 +52,10 @@ const CatEdit = ({ cats, updateCat }) => {
             <FormGroup>
               <Label for="age">Change Cat's Age</Label>
               <input
-              style={{
-                width: "5dvw",
-                marginLeft: "3vw",
-              }}
+                style={{
+                  width: "5dvw",
+                  marginLeft: "3vw",
+                }}
                 id="age"
                 name="age"
                 type="number"
@@ -71,9 +73,9 @@ const CatEdit = ({ cats, updateCat }) => {
         <FormGroup>
           <Label for="enjoys">What does your cat enjoy doing?</Label>
           <input
-          style={{
-            width: "50dvw",
-          }}
+            style={{
+              width: "50dvw",
+            }}
             id="enjoys"
             name="enjoys"
             type="text"
@@ -88,9 +90,9 @@ const CatEdit = ({ cats, updateCat }) => {
         <FormGroup>
           <Label for="image">Image URL</Label>
           <input
-          style={{
-            width: "50dvw",
-          }}
+            style={{
+              width: "50dvw",
+            }}
             id="image"
             name="image"
             type="text"
@@ -103,15 +105,24 @@ const CatEdit = ({ cats, updateCat }) => {
           )}
         </FormGroup>
         <div className="centering-content">
-          <button style={{marginRight: "1vw", backgroundColor:"#4BCCFF"}} onClick={handleSubmit} className="form-buttons">
+          <button
+            style={{ marginRight: "1vw", backgroundColor: "#4BCCFF" }}
+            onClick={handleSubmit}
+            className="form-buttons"
+          >
             Submit
           </button>
           <Link to={`/cat-show/${currentCat.id}`}>
-            <button style={{backgroundColor: "#828CA2",}} className="form-buttons">Cancel</button>
+            <button
+              style={{ backgroundColor: "#828CA2" }}
+              className="form-buttons"
+            >
+              Cancel
+            </button>
           </Link>
         </div>
       </Form>
-    </>
+    </div>
   )
 }
 

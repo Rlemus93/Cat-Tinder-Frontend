@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useMemo } from "react"
 import heroImage from "../assets/hero-image.png"
 import heroImage2 from "../assets/hero-image-2.png"
 import heroImage3 from "../assets/hero-image-3.png"
@@ -11,16 +11,45 @@ import { Link } from "react-router-dom"
 
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0)
-  const heroImages = [heroImage, heroImage2, heroImage3, heroImage4, heroImage5]
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const heroImages = useMemo(
+    () => [heroImage, heroImage3, heroImage4, heroImage5, heroImage2],
+    []
+  )
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prevIndex) =>
-        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
-      )
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [])
+    const imagePromises = heroImages.map((path) => {
+      return new Promise((resolve) => {
+        const img = new Image()
+        img.src = path
+        img.onload = resolve
+      })
+    })
+
+    Promise.all(imagePromises)
+      .then(() => {
+        setIsLoaded(true)
+        console.log("Images loaded")
+      })
+      .catch((error) => console.error("Error loading images:", error))
+  }, [heroImages])
+
+  useEffect(() => {
+    if (isLoaded) {
+      const interval = setInterval(() => {
+        setImageIndex((prevIndex) =>
+          prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+        )
+      }, 5000)
+      return () => clearInterval(interval)
+    }
+  }, [isLoaded, heroImages])
+
+  if (!isLoaded) {
+    return <div className="loading">Loading...</div>
+  }
+
   return (
     <div className="home-cont">
       <img

@@ -29,6 +29,9 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="navigation-links">
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
         <NavLink className="nav-link" to="/cat-index">
           Meet All the Cats
         </NavLink>

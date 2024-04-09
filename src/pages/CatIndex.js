@@ -4,10 +4,14 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons"
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const CatIndex = ({ cats }) => {
   const [likedCats, setLikedCats] = useState([])
+  const [isRendered, setIsRendered] = useState(false)
+  const [search, setSearch] = useState("")
+  const [ageFilter, setAgeFilter] = useState("")
+  const [ageOptions, setAgeOptions] = useState([])
+  const [filteredCats, setFilteredCats] = useState([])
 
   const toggleLike = (catId) => {
     if (likedCats.includes(catId)) {
@@ -28,11 +32,75 @@ const CatIndex = ({ cats }) => {
     localStorage.setItem("likedCats", JSON.stringify(likedCats))
   }, [likedCats])
 
+  useEffect(() => {
+    setIsRendered(true)
+    setFilteredCats(
+      cats.filter((cat) => {
+        const nameMatch = cat.name.toLowerCase().includes(search.toLowerCase())
+        const ageMatch = !ageFilter || cat.age === parseInt(ageFilter)
+        return nameMatch && ageMatch
+      })
+    )
+    return () => setIsRendered(false)
+  }, [cats, search, ageFilter])
+
+  useEffect(() => {
+    const ages = [...new Set(cats.map((cat) => cat.age))]
+    ages.sort((a, b) => a - b)
+    setAgeOptions(ages)
+  }, [cats])
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value)
+  }
+
+  const handleAgeFilterChange = (e) => {
+    setAgeFilter(e.target.value)
+  }
+
+  if (!isRendered) {
+    return <div className="loading">Loading...</div>
+  }
+
   return (
     <div className="index-cont">
       <h1 className="index-title">Meet All the Cats</h1>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search Cats..."
+          value={search}
+          onChange={handleSearchChange}
+          style={{
+            borderRadius: "1vh",
+            border: "none",
+            outline: "none",
+            height: "3.5vh",
+          }}
+        />
+        <div className="age-filter">
+          <select
+            value={ageFilter}
+            onChange={handleAgeFilterChange}
+            style={{
+              borderRadius: "1vh",
+              border: "none",
+              outline: "none",
+              height: "3.5vh",
+              fontFamily: '"Raleway", sans-serif',
+            }}
+          >
+            <option value="">Filter by Age...</option>
+            {ageOptions.map((age) => (
+              <option key={age} value={age}>
+                {age} Year{age !== 1 ? "s" : ""}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
       <div className="cat-index-cards">
-        {cats.map((cat) => {
+        {filteredCats.map((cat) => {
           const isLiked = likedCats.includes(cat.id)
           return (
             <Card
@@ -71,14 +139,8 @@ const CatIndex = ({ cats }) => {
                     onClick={() => toggleLike(cat.id)}
                     className="heart-icon"
                   />
-
                   <Link to={`/cat-show/${cat.id}`}>
                     <button className="see-more-button">
-                      {/* <FontAwesomeIcon
-                        style={{ height: "2vh", marginRight: "0.5vw" }}
-                        className="show-icon arrow-right"
-                        icon={faArrowRight}
-                      /> */}
                       <span>See More </span>
                     </button>
                   </Link>
