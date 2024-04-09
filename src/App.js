@@ -23,6 +23,11 @@ const App = () => {
         throw new Error("Error on the get request for cats")
       }
       const getResult = await getResponse.json()
+      getResult.sort(
+        (a, b) =>
+          new Date(b.updated_at || b.created_at) -
+          new Date(a.updated_at || a.created_at)
+      )
       setCats(getResult)
     } catch (error) {
       alert("Cat-astrophe! something went wrong:", error.message)

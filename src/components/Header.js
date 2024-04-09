@@ -29,13 +29,15 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="navigation-links">
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
         <NavLink className="nav-link" to="/cat-index">
           Meet All the Cats
         </NavLink>
         <NavLink className="nav-link" to="/cat-new">
           Add a Cat
         </NavLink>
-
         <a
           href="https://www.petfinder.com/search/cats-for-adoption/us"
           target="blank"
